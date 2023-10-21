@@ -1,0 +1,41 @@
+/*
+
+An element in an array is dominant if it is greater than all elements to its right. You will be given an array and your task will be to return a list of all dominant elements. For example:
+
+solve([1,21,4,7,5]) = [21,7,5] because 21, 7 and 5 are greater than elments to their right. 
+solve([5,4,3,2,1]) = [5,4,3,2,1]
+
+Notice that the last element is always included. All numbers will be greater than 0.
+
+*/
+
+
+function solve(arr) {
+    // var to store dominate elements
+    let dom = [];
+    
+    // loop through array and compare i with i + 1?
+    for(let i = 0; i < arr.length; i++){
+      // compare array indices
+      if(arr[i] > arr[i + 1]) {
+        
+        //last element isnt being pushed?? i think it has to do with comparing index -1 (last elelement) with index 0 (first element)
+        dom.push(arr[i])
+        
+      }
+        // if the last element is greater than the first element, push it to the dom array: this didnt work at all not sure why
+      if(i === arr.length){
+        if(arr[i] > arr[0]){
+          dom.push(arr[i])
+        }
+      }
+      
+    }
+    
+    return dom;
+  }
+
+
+  //did not pass at all on codewars
+
+
